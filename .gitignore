@@ -1,0 +1,54 @@
+# ==============================================================================
+# .gitignore — RV32I 5-Stage Pipelined Processor
+# ==============================================================================
+
+# Simulation outputs
+*.vcd
+*.vvp
+*.fst
+*.lxt
+*.lxt2
+
+# Icarus Verilog / Verilator build artifacts
+sim/
+obj_dir/
+*.out
+
+# C++ ISS build
+iss/build/
+iss/iss_trace.log
+
+# Editor / IDE
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Synopsys VCS
+csrc/
+simv
+simv.daidir/
+ucli.key
+DVEfiles/
+inter.vpd
+
+# Cadence Xcelium
+xcelium.d/
+xrun.log
+xrun.history
+
+# Mentor Questa
+work/
+transcript
+vsim.wlf
+modelsim.ini
+
+# Vivado
+*.jou
+*.log
+*.xpr
+.Xil/
+*.bit
+*.ltx

@@ -1,0 +1,57 @@
+// ============================================================================
+// Test program: test_comprehensive.hex
+// All encodings hand-verified against RISC-V spec.
+//
+// Expected final register state:
+//   x1  = 0x00000054  (JAL link: PC+4 of JAL at 0x50)
+//   x5  = 0x00000005  x6  = 0x00000003  x7  = 0x00000008
+//   x8  = 0x00000002  x9  = 0x00000001  x10 = 0x00000007
+//   x11 = 0x00000006  x12 = 0x00000000  x13 = 0x00000001
+//   x14 = 0x00000014  x15 = 0x00000001  x16 = 0x12345000
+//   x17 = 0x12345678  x18 = 0x00000008  x20 = 0x0000000A
+//   x21 = 0x0000000A  x23 = 0x0000002A
+// ============================================================================
+
+@00000000
+
+// --- PC 0x00: I-TYPE — Load immediates ---
+00500293
+00300313
+
+// --- PC 0x08: R-TYPE — Register-register ALU ---
+006283B3
+40628433
+0062F4B3
+0062E533
+0062C5B3
+0062A633
+005326B3
+
+// --- PC 0x24: I-TYPE — Shifts ---
+00229713
+00135793
+
+// --- PC 0x2C: U-TYPE — LUI ---
+12345837
+
+// --- PC 0x30: LUI + ADDI — 32-bit constant build ---
+123458B7
+67888893
+
+// --- PC 0x38: S-TYPE + LOAD — Memory round-trip ---
+00702023
+00002903
+
+// --- PC 0x40: BRANCH — Count-to-10 loop ---
+00000A13
+00A00A93
+001A0A13
+FF5A1CE3
+
+// --- PC 0x50: J-TYPE — Jump and link ---
+008000EF
+00000013
+02A00B93
+
+// --- PC 0x5C: HALT ---
+00000000
