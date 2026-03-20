@@ -161,9 +161,7 @@ The project follows a verification-first development flow:
 
 4. **ISS-RTL comparison** — the integration test runs the identical hex program through both the ISS and the pipelined RTL, then asserts register-for-register equality.
 
-## Differences from Reference Implementation
-
-This project was inspired by [Varunkumar0610/RISC-V-32I-5-stage-Pipeline-Core](https://github.com/Varunkumar0610/RISC-V-32I-5-stage-Pipeline-Core) (Verilog) and rebuilt from scratch in SystemVerilog with significant architectural improvements:
+## Implementation
 
 | Feature | Reference (Verilog) | This Project (SystemVerilog) |
 |---------|--------------------|-----------------------------|
